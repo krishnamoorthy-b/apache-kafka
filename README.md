@@ -1,8 +1,7 @@
 # apache-kafka
-- Why need kafka
-- Where to use
+- what is kafka
 - What is zookeeper
-- How it's works
+- apache pulsar vs kafka vs flink
 - Architecture
 ### Let start setup
 #### Step 1:
@@ -12,7 +11,7 @@
     ```bin/zookeeper-server-start.sh config/zookeeper.properties```
     - Start kafka server
     ```bin/kafka-server-start.sh config/server.properties```
-    - Run below command to listen pushing messages
+    - Run below command to listen pushing messages (optional)
     ```bin/kafka-console-consumer.sh --topic chat --from-beginning --bootstrap-server localhost:9092```
 #### Step 2:
   - Start server and do call below API

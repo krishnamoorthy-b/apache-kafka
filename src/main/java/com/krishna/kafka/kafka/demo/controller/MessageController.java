@@ -18,7 +18,11 @@ public class MessageController {
 
     @GetMapping("/send")
     public ResponseEntity<?> producer(@RequestParam String message){
-        kafkaService.send(message);
+        try {
+            kafkaService.send(message);
+        } catch (Exception e) {
+           return ResponseEntity.internalServerError().body(e.getMessage());
+        }
         return ResponseEntity.ok("Msg sent success fully!");
     }
 }
